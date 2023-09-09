@@ -231,12 +231,11 @@ const MyTeam = () => {
       />
       <View style={styles.rectangleGroup}>
         <View style={[styles.rectangleView, styles.capacityBg]} />
-        <Text style={[styles.bulls, styles.bullsTypo]} 
-        onPress={navigation.navigate('MyTeam1')}>Games-m</Text>
+        <Text style={[styles.bulls, styles.bullsTypo]}  onPress={() => navigation.navigate("MyTeam1")}>Games-m</Text>
         <Text style={[styles.warriors, styles.bullsLayout]}>Roster 01</Text>
         <Pressable
           style={styles.warriors1}
-          onPress={() => navigation.navigate("MyTeam")}
+          onPress={() => navigation.navigate("PlayerStat")}
         >
           <Text style={[styles.stats, styles.bullsTypo]}>Stats</Text>
         </Pressable>

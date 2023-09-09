@@ -2,9 +2,11 @@ import * as React from "react";
 import { Image } from "expo-image";
 import { StyleSheet, View, Text } from "react-native";
 import { Color, Border, FontSize, FontFamily, Padding } from "../GlobalStyles";
+import { ScrollView } from "react-native-gesture-handler";
 
 const AssignVideoChallenge = () => {
   return (
+    <ScrollView>
     <View style={[styles.assignVideoChallenge, styles.vectorIconLayout]}>
       <Image
         style={styles.assignVideoChallengeChild}
@@ -196,6 +198,7 @@ const AssignVideoChallenge = () => {
       </Text>
       <Text style={[styles.shootingChallenge1, styles.noteTypo1]}>2250</Text>
     </View>
+    </ScrollView>
   );
 };
 

@@ -1,6 +1,6 @@
 import React, { useMemo } from "react";
 import { Image } from "expo-image";
-import { StyleSheet, View, Text, ImageSourcePropType } from "react-native";
+import { StyleSheet, View, Text, ImageSourcePropType, Touchable, TouchableOpacity } from "react-native";
 import { FontFamily, FontSize, Border, Color } from "../GlobalStyles";
 import { useNavigation } from "@react-navigation/native"; 
 
@@ -74,8 +74,9 @@ const SectionCard1 = ({
         />
       </View>
       <View style={[styles.calendarParent, styles.parentPosition]}>
-        <Text style={[styles.explore, styles.homeTypo]} 
-        onPress={() => navigation.navigate("CalendarPlayer")}>Calendar fix</Text>
+      <TouchableOpacity >
+        <Text style={[styles.explore, styles.homeTypo]} onPress={() => navigation.navigate("CalendarPlayer")}>Calendar F</Text>
+        </TouchableOpacity>
         <Image
           style={[styles.calendarblankIcon, styles.iconLayout]}
           contentFit="cover"

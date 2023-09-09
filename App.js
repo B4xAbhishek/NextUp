@@ -44,6 +44,7 @@ import Search from "./screens/Search";
 import EditProfileCreateNewPass from "./screens/EditProfileCreateNewPass";
 import EditProfileVerification from "./screens/EditProfileVerification";
 import CalendarPlayer from "./screens/CalendarPlayer";
+import AssignVideoChallenge from "./screens/AssignVideoChallenge"
 import GameDetailsScreenOverview from "./screens/GameDetailsScreenOverview";
 import GameDetailsScreenOverview1 from "./screens/GameDetailsScreenOverview1";
 import GameDetailsScreenOverview2 from "./screens/GameDetailsScreenOverview2";
@@ -106,6 +107,11 @@ const App = () => {
                <Stack.Screen
                 name="EditProfileCreateNewPass"
                 component={EditProfileCreateNewPass}
+                options={{ headerShown: false }}
+              />
+                <Stack.Screen
+                name="AssignVideoChallenge"
+                component={AssignVideoChallenge}
                 options={{ headerShown: false }}
               />
                <Stack.Screen
