@@ -6,6 +6,7 @@ import FormContainer from "../components/FormContainer";
 import { useNavigation } from "@react-navigation/native";
 import StatCollectionSection from "../components/StatCollectionSection";
 import { Color, FontFamily, FontSize, Border } from "../GlobalStyles";
+import { Picker } from "@react-native-picker/picker";
 
 const TellUsMoreFilledBoy2 = () => {
   const navigation = useNavigation();
@@ -60,8 +61,18 @@ const TellUsMoreFilledBoy2 = () => {
           contentFit="cover"
           source={require("../assets/path-5-copy-2.png")}
         />
-        <Text style={[styles.lastName, styles.nameLayout]}>CLASS OF</Text>
-        <Text style={[styles.kumar, styles.nameLayout]}>2019</Text>
+        <Text style={[styles.lastName, styles.nameLayout]}>CLASS OF </Text>
+        {/* <Text style={[styles.kumar, styles.nameLayout]}>2019</Text> */}
+        <Picker
+          selectedValue={selectedYear}
+          style={styles.picker}
+          onValueChange={handleYearChange}
+          style={[styles.kumar, styles.nameLayout]}
+        >
+          <Picker.Item label="2019" value="2019" />
+          <Picker.Item label="2020" value="2020" />
+          <Picker.Item label="2021" value="2021" />
+        </Picker>
         <Image
           style={[styles.vectorIcon, styles.vectorIconLayout]}
           contentFit="cover"
@@ -78,7 +89,7 @@ const TellUsMoreFilledBoy2 = () => {
           source={require("../assets/path-5-copy-4.png")}
         />
         <Text style={[styles.lastName, styles.nameLayout]}>SCHOOL</Text>
-        <Text style={[styles.kumar, styles.nameLayout]}>ABC School</Text>
+        <Text style={[styles.kumar, styles.nameLayout]}>ABC Boy School </Text>
         <Image
           style={[styles.vectorIcon1, styles.vectorIconLayout]}
           contentFit="cover"

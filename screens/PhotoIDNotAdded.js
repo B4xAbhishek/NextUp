@@ -11,7 +11,7 @@ const PhotoIDNotAdded = () => {
   
   const handleButtonClick = () => {
     // Navigate to the "PhotoIDNotAdded1" screen
-    navigation.navigate("PlayerDashboard");
+    navigation.navigate("PlayerProfileSomeoneElse");
   };
 
 

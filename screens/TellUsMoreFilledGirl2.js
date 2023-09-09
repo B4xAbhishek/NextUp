@@ -12,16 +12,6 @@ const TellUsMoreFilledGirl2 = () => {
 
   return (
     <View style={styles.tellUsMoreFilledGirl}>
-      <BarsStatusBarIPhoneD
-        wifi={require("../assets/wifi2.png")}
-        cellularConnection={require("../assets/cellular-connection1.png")}
-        barsStatusBarIPhoneDPosition="absolute"
-        barsStatusBarIPhoneDBackgroundColor="unset"
-        barsStatusBarIPhoneDTop={0}
-        barsStatusBarIPhoneDLeft={0}
-        barsStatusBarIPhoneDWidth={376}
-        timeFontFamily="RobotoSerif-SemiBold"
-      />
       <View style={styles.group}>
         <View style={styles.rectangle} />
         <Image
@@ -94,7 +84,7 @@ const TellUsMoreFilledGirl2 = () => {
         contentFit="cover"
         source={require("../assets/ellipse-708.png")}
       />
-      <Text style={[styles.oneLastStep, styles.onePosition]}>Male</Text>
+      <Text style={[styles.oneLastStep, styles.onePosition]}  onPress={() => navigation.navigate("TellUsMoreFilledBoy2")}>Male</Text>
       <Text style={[styles.oneLastStep1, styles.onePosition]}>Female</Text>
       <View style={[styles.homeIndicatorLightWrapper, styles.homeLayout]}>
         <View style={[styles.homeIndicatorLight, styles.homeLayout]}>

@@ -7,21 +7,11 @@ import ConfirmSection from "../components/ConfirmSection";
 import FrameComponent from "../components/FrameComponent";
 import { FontSize, Color, Border, FontFamily } from "../GlobalStyles";
 
-const SelectPlayStyle = () => {
+const TellUsMoreFilled = () => {
   const navigation = useNavigation();
 
   return (
-    <View style={styles.selectPlayStyle}>
-      <BarsStatusBarIPhoneD
-        wifi={require("../assets/wifi1.png")}
-        cellularConnection={require("../assets/cellular-connection1.png")}
-        barsStatusBarIPhoneDPosition="absolute"
-        barsStatusBarIPhoneDBackgroundColor="unset"
-        barsStatusBarIPhoneDTop={0}
-        barsStatusBarIPhoneDLeft={0}
-        barsStatusBarIPhoneDWidth={376}
-        timeFontFamily="RobotoSerif-SemiBold"
-      />
+    <View style={styles.tellUsMoreFilled}>
       <View style={styles.group}>
         <View style={styles.rectangle} />
         <Image
@@ -36,25 +26,19 @@ const SelectPlayStyle = () => {
           <View style={styles.homeIndicator} />
         </View>
       </View>
-      <Text style={styles.oneLastStep}>Select Player Style</Text>
+      <Text style={styles.oneLastStep}>Select Player Style Boy</Text>
       <ConfirmSection
-        propTop={705}
-        onFramePressablePress={() =>
-          navigation.navigate("UploadPhotoNotAdded1")
-        }
+        onFramePressablePress={() => navigation.navigate("UploadPhotoNotAdded")}
       />
-      <Text style={styles.loremIpsumDolor}>
-        Select from the 5 player styles. Just like a game each style will come
-        with different challenges including stats in focus.
-      </Text>
-      <Text style={[styles.player, styles.playerTypo]}>
-        What type of player are you?
-      </Text>
+      <Text
+        style={styles.loremIpsumDolor}
+      >{`Lorem ipsum dolor sit amet, consectetur adipiscingert elit. Praesent in imperdiet enim. `}</Text>
+      <Text style={[styles.player, styles.playerTypo]}>Slasher</Text>
       <Text style={[styles.player1, styles.playerTypo]}>Stats of Focus</Text>
       <View style={[styles.instanceParent, styles.parentFlexBox]}>
         <FrameComponent
           prop="56.0"
-          points="--"
+          points="Points"
           showText={false}
           frameViewPosition="unset"
           frameViewElevation={17.04}
@@ -69,7 +53,7 @@ const SelectPlayStyle = () => {
         />
         <FrameComponent
           prop="2.2"
-          points="--"
+          points="Turnovers"
           showText={false}
           frameViewPosition="unset"
           frameViewElevation={17.04}
@@ -84,7 +68,7 @@ const SelectPlayStyle = () => {
         />
         <FrameComponent
           prop="0.5"
-          points="--"
+          points="Blocks"
           showText={false}
           frameViewPosition="unset"
           frameViewElevation={17.04}
@@ -99,7 +83,7 @@ const SelectPlayStyle = () => {
         />
         <FrameComponent
           prop="9.5"
-          points="---"
+          points="Rebounds"
           showText={false}
           frameViewPosition="unset"
           frameViewElevation={17.04}
@@ -128,7 +112,7 @@ const SelectPlayStyle = () => {
             <Image
               style={styles.httpswwwpexelscomphotomIcon}
               contentFit="cover"
-              source={require("../assets/httpswwwpexelscomphotomanplayingbasketballwilson1596111.png")}
+              source={require("../assets/httpswwwpexelscomphotomanplayingbasketballwilson159611.png")}
             />
           </View>
         </ImageBackground>
@@ -136,28 +120,28 @@ const SelectPlayStyle = () => {
           <Image
             style={styles.httpswwwpexelscomphotomIcon}
             contentFit="cover"
-            source={require("../assets/httpswwwpexelscomphotophotoofmandoingdunk28349141.png")}
+            source={require("../assets/httpswwwpexelscomphotophotoofmandoingdunk2834914.png")}
           />
         </View>
         <View style={[styles.pointForward, styles.pointSpaceBlock]}>
           <Image
             style={styles.httpswwwpexelscomphotomIcon}
             contentFit="cover"
-            source={require("../assets/httpswwwpexelscomphotobasketballplayerholdingball9745021.png")}
+            source={require("../assets/httpswwwpexelscomphotobasketballplayerholdingball974502.png")}
           />
         </View>
         <View style={[styles.pointForward2, styles.pointSpaceBlock]}>
           <Image
             style={styles.httpswwwpexelscomphotomIcon}
             contentFit="cover"
-            source={require("../assets/mask2.png")}
+            source={require("../assets/mask.png")}
           />
         </View>
         <View style={[styles.pointForward2, styles.pointSpaceBlock]}>
           <Image
             style={styles.httpswwwpexelscomphotomIcon}
             contentFit="cover"
-            source={require("../assets/mask3.png")}
+            source={require("../assets/mask1.png")}
           />
         </View>
       </View>
@@ -208,9 +192,9 @@ const styles = StyleSheet.create({
   },
   group: {
     top: 62,
+    left: 21,
     width: 30,
     height: 30,
-    left: 21,
     position: "absolute",
   },
   homeIndicatorLight: {
@@ -240,21 +224,21 @@ const styles = StyleSheet.create({
     position: "absolute",
   },
   loremIpsumDolor: {
-    top: 514,
+    top: 518,
+    left: 18,
     fontSize: FontSize.size_xs,
     fontFamily: FontFamily.robotoRegular,
-    width: 331,
+    width: 311,
     lineHeight: 16,
-    left: 19,
     textAlign: "left",
     color: Color.othersWhite,
     position: "absolute",
   },
   player: {
-    top: 489,
+    top: 499,
     fontWeight: "500",
     fontFamily: FontFamily.robotoMedium,
-    left: 21,
+    left: 19,
   },
   player1: {
     top: 564,
@@ -265,7 +249,6 @@ const styles = StyleSheet.create({
   instanceParent: {
     top: 589,
     left: 19,
-    flexDirection: "row",
   },
   httpswwwpexelscomphotomIcon: {
     borderRadius: 8,
@@ -293,14 +276,14 @@ const styles = StyleSheet.create({
     width: 111,
   },
   slasherParent: {
-    top: 134,
-    left: 13,
+    top: 149,
+    left: 17,
     width: 330,
     flexWrap: "wrap",
     alignItems: "center",
     justifyContent: "center",
   },
-  selectPlayStyle: {
+  tellUsMoreFilled: {
     backgroundColor: Color.colorGray_200,
     flex: 1,
     width: "100%",
@@ -309,4 +292,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default SelectPlayStyle;
+export default TellUsMoreFilled;

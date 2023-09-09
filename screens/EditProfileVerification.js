@@ -55,7 +55,8 @@ upload right documents..`}</Text>
         </Text>
       </Text>
       <View style={styles.editProfileVerificationItem} />
-      <Text style={[styles.bulls, styles.bullsTypo]}>Account Details</Text>
+      <Text style={[styles.bulls, styles.bullsTypo]}
+       onPress={() => navigation.navigate('EditProfileCreateNewPass')}>Account Details</Text>
       <Text style={styles.warriors}>Verification</Text>
       <Text style={[styles.warriors1, styles.bullsTypo]}>Other Details</Text>
     </View>

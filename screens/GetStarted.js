@@ -1,9 +1,10 @@
 import * as React from "react";
-import { StyleSheet, View, Text, TouchableOpacity  } from "react-native";
+import { StyleSheet, View, Text, TouchableOpacity } from "react-native";
 import { Image } from "expo-image";
 import BarsStatusBarIPhoneD from "../components/BarsStatusBarIPhoneD";
 import { Color, Border, FontSize, FontFamily } from "../GlobalStyles";
 import { useNavigation } from "@react-navigation/native";
+import { ScrollView } from "react-native-gesture-handler";
 
 const GetStarted = () => {
 
@@ -11,111 +12,103 @@ const GetStarted = () => {
   // GoogleSignin.configure({
   //   webClientId: '923260106378-l5ksebrfu9cl9ltob3dd3n1jr1htouio.apps.googleusercontent.com',
   // });
-  
+
   const signInWithGoogle = () => {
-    navigation.navigate("GameDetailsScreenLineup");    
+    navigation.navigate("Frame");
   };
 
   return (
-    <View style={styles.getStarted}>
-      <View style={styles.bg} />
-      <BarsStatusBarIPhoneD
-        wifi={require("../assets/wifi.png")}
-        cellularConnection={require("../assets/cellular-connection.png")}
-        barsStatusBarIPhoneDPosition="absolute"
-        barsStatusBarIPhoneDBackgroundColor="unset"
-        barsStatusBarIPhoneDTop={0}
-        barsStatusBarIPhoneDLeft={0}
-        barsStatusBarIPhoneDWidth={375}
-        timeFontFamily="RobotoSerif-SemiBold"
-      />
-      <View style={[styles.rectangleCopyParent, styles.rectangleParentLayout]}>
-        <View style={[styles.rectangleCopy, styles.groupIconLayout]} />
+    <ScrollView>
+      <View style={styles.getStarted}>
+        <View style={styles.bg} />
+        <View style={[styles.rectangleCopyParent, styles.rectangleParentLayout]}>
+          <View style={[styles.rectangleCopy, styles.groupIconLayout]} />
+          <Image
+            style={[styles.path2Icon, styles.iconPosition]}
+            contentFit="cover"
+            source={require("../assets/path-2.png")}
+          />
+        </View>
         <Image
-          style={[styles.path2Icon, styles.iconPosition]}
+          style={[styles.groupIcon, styles.groupIconLayout]}
           contentFit="cover"
-          source={require("../assets/path-2.png")}
+          source={require("../assets/group.png")}
         />
-      </View>
-      <Image
-        style={[styles.groupIcon, styles.groupIconLayout]}
-        contentFit="cover"
-        source={require("../assets/group.png")}
-      />
-      <View style={[styles.rectangleCopy4Parent, styles.rectangleParentLayout]}>
-        <View style={[styles.rectangleCopy, styles.groupIconLayout]} />
-        <Image
-          style={[styles.path98642Icon, styles.iconPosition]}
-          contentFit="cover"
-          source={require("../assets/path9864-2.png")}
-        />
-      </View>
-      <Text
-        style={[styles.playersCoachesAnd, styles.rectangleLayout]}
-      >{`Players,
+        <View style={[styles.rectangleCopy4Parent, styles.rectangleParentLayout]}>
+          <View style={[styles.rectangleCopy, styles.groupIconLayout]} />
+          <Image
+            style={[styles.path98642Icon, styles.iconPosition]}
+            contentFit="cover"
+            source={require("../assets/path9864-2.png")}
+          />
+        </View>
+        <Text
+          style={[styles.playersCoachesAnd, styles.rectangleLayout]}
+        >{`Players,
 Coaches and
 Fans.`}</Text>
-      <Image
-        style={[styles.ovalIcon, styles.ovalIconLayout]}
-        contentFit="cover"
-        source={require("../assets/oval.png")}
-      />
-      <Image
-        style={[styles.ovalCopyIcon, styles.ovalIconLayout]}
-        contentFit="cover"
-        source={require("../assets/oval-copy.png")}
-      />
-      <Image
-        style={[styles.ovalCopy2, styles.ovalIconLayout]}
-        contentFit="cover"
-        source={require("../assets/oval-copy.png")}
-      />
-      <View style={[styles.groupParent, styles.rectangleLayout]}>
-        <View style={[styles.rectangleCopy3Wrapper, styles.rectangleLayout]}>
-          <View style={[styles.rectangleCopy3, styles.rectangleLayout]} />
-        </View>
-        <TouchableOpacity onPress={signInWithGoogle}>
-        <Text style={[styles.signInWith, styles.signInWithFlexBox]}>
-          Sign in with Google
-        </Text>
-      </TouchableOpacity>
-      </View>
-      <Text style={[styles.byContinuingYouContainer, styles.signInWithFlexBox]}>
-        <Text style={styles.byContinuingYouContainer1}>
-          <Text style={styles.byContinuingYouAgreeNextU}>
-            <Text style={styles.byContinuingYou}>
-              By continuing you agree Next Up
+        <Image
+          style={[styles.ovalIcon, styles.ovalIconLayout]}
+          contentFit="cover"
+          source={require("../assets/oval.png")}
+        />
+        <Image
+          style={[styles.ovalCopyIcon, styles.ovalIconLayout]}
+          contentFit="cover"
+          source={require("../assets/oval-copy.png")}
+        />
+        <Image
+          style={[styles.ovalCopy2, styles.ovalIconLayout]}
+          contentFit="cover"
+          source={require("../assets/oval-copy.png")}
+        />
+        <View style={[styles.groupParent, styles.rectangleLayout]}>
+          <View style={[styles.rectangleCopy3Wrapper, styles.rectangleLayout]}>
+            <View style={[styles.rectangleCopy3, styles.rectangleLayout]} />
+          </View>
+          <TouchableOpacity onPress={signInWithGoogle}>
+            <Text style={[styles.signInWith, styles.signInWithFlexBox]}>
+              Sign in with Google
             </Text>
-            <Text style={styles.text}>{` `}</Text>
-          </Text>
-          <Text style={styles.signInWithTypo}>{`Terms of 
-Services`}</Text>
-          <Text style={styles.byContinuingYouAgreeNextU}>
-            <Text style={styles.text}>{` `}</Text>
-            <Text style={styles.byContinuingYou}>{`&`}</Text>
-            <Text style={styles.text}>{` `}</Text>
-          </Text>
-          <Text style={styles.signInWithTypo}>Privacy Policy</Text>
-        </Text>
-      </Text>
-      <View style={[styles.homeIndicatorLightWrapper, styles.homeLayout]}>
-        <View style={[styles.homeIndicatorLight, styles.homeLayout]}>
-          <View style={[styles.homeIndicatorLight, styles.homeLayout]} />
-          <View style={styles.homeIndicator} />
+          </TouchableOpacity>
         </View>
-      </View>
-      <Image
-        style={styles.getStartedChild}
-        contentFit="cover"
-        source={require("../assets/group-6.png")}
-      />
-      <Image
-        style={styles.getStartedChild}
-        contentFit="cover"
-        source={require("../assets/group-6.png")}
-      />
+        <Text style={[styles.byContinuingYouContainer, styles.signInWithFlexBox]}>
+          <Text style={styles.byContinuingYouContainer1}>
+            <Text style={styles.byContinuingYouAgreeNextU}>
+              <Text style={styles.byContinuingYou}>
+                By continuing you agree Next Up
+              </Text>
+              <Text style={styles.text}>{` `}</Text>
+            </Text>
+            <Text style={styles.signInWithTypo}>{`Terms of 
+Services`}</Text>
+            <Text style={styles.byContinuingYouAgreeNextU}>
+              <Text style={styles.text}>{` `}</Text>
+              <Text style={styles.byContinuingYou}>{`&`}</Text>
+              <Text style={styles.text}>{` `}</Text>
+            </Text>
+            <Text style={styles.signInWithTypo}>Privacy Policy</Text>
+          </Text>
+        </Text>
+        <View style={[styles.homeIndicatorLightWrapper, styles.homeLayout]}>
+          <View style={[styles.homeIndicatorLight, styles.homeLayout]}>
+            <View style={[styles.homeIndicatorLight, styles.homeLayout]} />
+            <View style={styles.homeIndicator} />
+          </View>
+        </View>
+        <Image
+          style={styles.getStartedChild}
+          contentFit="cover"
+          source={require("../assets/group-6.png")}
+        />
+        <Image
+          style={styles.getStartedChild}
+          contentFit="cover"
+          source={require("../assets/group-6.png")}
+        />
 
-    </View>
+      </View>
+    </ScrollView>
   );
 };
 

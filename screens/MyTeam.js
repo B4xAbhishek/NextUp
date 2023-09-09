@@ -53,7 +53,8 @@ const MyTeam = () => {
           />
         </View>
         <View style={[styles.homeParent, styles.parentPosition1]}>
-          <Text style={[styles.explore, styles.exploreTypo]}>Dashboard</Text>
+          <Text style={[styles.explore, styles.exploreTypo]} 
+          onPress={() => navigation.navigate("PlayerContent1")} >Dashboard</Text>
           <Image
             style={[styles.houseIcon, styles.iconLayout]}
             contentFit="cover"
@@ -69,7 +70,8 @@ const MyTeam = () => {
           />
         </View>
         <View style={[styles.myStandingParent, styles.parentPosition1]}>
-          <Text style={[styles.myStanding, styles.exploreTypo]}onPress={() => navigation.navigate("MyTeam1")}>My Team</Text>
+          <Text style={[styles.myStanding, styles.exploreTypo]} 
+          onPress={() => navigation.navigate("MyTeam1")}>My Team</Text>
           <Image
             style={[styles.usersIcon, styles.iconLayout]}
             contentFit="cover"
@@ -77,7 +79,8 @@ const MyTeam = () => {
           />
         </View>
         <View style={[styles.proParent, styles.parentPosition1]}>
-          <Text style={[styles.explore, styles.exploreTypo]}>Account</Text>
+          <Text style={[styles.explore, styles.exploreTypo]}          
+           onPress={() => navigation.navigate("AccountSetting")}>Account</Text>
           <Image
             style={[styles.userIcon, styles.iconLayout]}
             contentFit="cover"
@@ -228,13 +231,14 @@ const MyTeam = () => {
       />
       <View style={styles.rectangleGroup}>
         <View style={[styles.rectangleView, styles.capacityBg]} />
-        <Text style={[styles.bulls, styles.bullsTypo]} onPress={navigation.navigate('MyTeam1')}>Games-m</Text>
+        <Text style={[styles.bulls, styles.bullsTypo]} 
+        onPress={navigation.navigate('MyTeam1')}>Games-m</Text>
         <Text style={[styles.warriors, styles.bullsLayout]}>Roster 01</Text>
         <Pressable
           style={styles.warriors1}
           onPress={() => navigation.navigate("MyTeam")}
         >
-          <Text style={[styles.stats, styles.bullsTypo]}  onPress={navigation.navigate('PlayerStats')}>Stats</Text>
+          <Text style={[styles.stats, styles.bullsTypo]}>Stats</Text>
         </Pressable>
       </View>
       <View style={styles.frameParent}>

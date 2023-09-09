@@ -1,26 +1,21 @@
-import * as React from "react";
+import React , { useState} from "react";
 import { StyleSheet, View, Text, Pressable } from "react-native";
 import { Image } from "expo-image";
 import BarsStatusBarIPhoneD from "../components/BarsStatusBarIPhoneD";
 import FormContainer from "../components/FormContainer";
 import { useNavigation } from "@react-navigation/native";
 import { Color, FontFamily, FontSize, Border, Padding } from "../GlobalStyles";
+import { Picker } from "@react-native-picker/picker";
 
 const TellUsMoreFilledBoy2 = () => {
   const navigation = useNavigation();
+  const [selectedYear, setSelectedYear] = useState("2019");
+  const handleYearChange = (itemValue) => {
+    setSelectedYear(itemValue); // Update the selected year
+  };
 
   return (
     <View style={styles.tellUsMoreFilledBoy}>
-      <BarsStatusBarIPhoneD
-        wifi={require("../assets/wifi1.png")}
-        cellularConnection={require("../assets/cellular-connection1.png")}
-        barsStatusBarIPhoneDPosition="absolute"
-        barsStatusBarIPhoneDBackgroundColor="unset"
-        barsStatusBarIPhoneDTop={0}
-        barsStatusBarIPhoneDLeft={0}
-        barsStatusBarIPhoneDWidth={376}
-        timeFontFamily="RobotoSerif-SemiBold"
-      />
       <Text style={[styles.signInWithContainer, styles.continueLayout]}>
         <Text style={styles.signInWithContainer1}>
           <Text style={styles.tellUs}>{`Tell us
@@ -60,7 +55,15 @@ const TellUsMoreFilledBoy2 = () => {
           source={require("../assets/path-5-copy-2.png")}
         />
         <Text style={[styles.lastName, styles.nameLayout]}>CLASS OF</Text>
-        <Text style={[styles.kumar, styles.nameLayout]}>2019</Text>
+        <Picker
+          selectedValue={selectedYear}
+          onValueChange={handleYearChange}
+          style={[styles.kumar, styles.nameLayout]}
+        >
+          <Picker.Item label="2019" value="2019" />
+          <Picker.Item label="2020" value="2020" />
+          <Picker.Item label="2021" value="2021" />
+        </Picker>
         <Image
           style={[styles.vectorIcon, styles.vectorIconLayout]}
           contentFit="cover"
@@ -77,7 +80,7 @@ const TellUsMoreFilledBoy2 = () => {
           source={require("../assets/path-5-copy-4.png")}
         />
         <Text style={[styles.lastName, styles.nameLayout]}>SCHOOL</Text>
-        <Text style={[styles.kumar, styles.nameLayout]}>ABC School</Text>
+        <Text style={[styles.kumar, styles.nameLayout]}>ABC SchooL</Text>
         <Image
           style={[styles.vectorIcon1, styles.vectorIconLayout]}
           contentFit="cover"
@@ -303,7 +306,7 @@ const styles = StyleSheet.create({
     left: 0,
   },
   kumar: {
-    top: 24,
+    top: 16,
     height: 18,
     fontWeight: "600",
     fontFamily: FontFamily.robotoBold,

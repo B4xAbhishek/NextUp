@@ -12,16 +12,6 @@ const TellUsMoreFilled = () => {
 
   return (
     <View style={styles.tellUsMoreFilled}>
-      <BarsStatusBarIPhoneD
-        wifi={require("../assets/wifi2.png")}
-        cellularConnection={require("../assets/cellular-connection1.png")}
-        barsStatusBarIPhoneDPosition="absolute"
-        barsStatusBarIPhoneDBackgroundColor="unset"
-        barsStatusBarIPhoneDTop={0}
-        barsStatusBarIPhoneDLeft={0}
-        barsStatusBarIPhoneDWidth={376}
-        timeFontFamily="RobotoSerif-SemiBold"
-      />
       <View style={styles.group}>
         <View style={styles.rectangle} />
         <Image
@@ -36,7 +26,7 @@ const TellUsMoreFilled = () => {
           <View style={styles.homeIndicator} />
         </View>
       </View>
-      <Text style={styles.oneLastStep}>Select Player Style</Text>
+      <Text style={styles.oneLastStep}>Select Player Style Girl</Text>
       <ConfirmSection
         onFramePressablePress={() => navigation.navigate("UploadPhotoNotAdded")}
       />

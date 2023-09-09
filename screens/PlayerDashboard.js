@@ -262,7 +262,7 @@ const styles = StyleSheet.create({
     position: "absolute",
   },
   ptsTypo: {
-    lineHeight: 12,
+    lineHeight: 14,
     fontSize: FontSize.size_3xs,
     fontFamily: FontFamily.robotoMedium,
     fontWeight: "500",

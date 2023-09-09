@@ -1,40 +1,62 @@
-import * as React from "react";
-import { StyleSheet, View, Text, Pressable } from "react-native";
+import React, {useState, useEffect } from "react";
+import { StyleSheet, View, Text, Pressable, Platform  } from "react-native";
 import { Image } from "expo-image";
-import BarsStatusBarIPhoneD from "../components/BarsStatusBarIPhoneD";
 import { useNavigation } from "@react-navigation/native";
 import { Color, FontFamily, FontSize, Border } from "../GlobalStyles";
+import { Camera } from "expo-camera";
 
 const UploadPhotoNotAdded = () => {
   const navigation = useNavigation();
 
+  const [hasPermission, setHasPermission] = useState(null);
+  const [cameraRef, setCameraRef] = useState(null);
+
+  useEffect(() => {
+    (async () => {
+      const { status } = await Camera.requestCameraPermissionsAsync();
+      setHasPermission(status === "granted");
+    })();
+  }, []);
+
+  const takePicture = async () => {
+    if (cameraRef) {
+      const photo = await cameraRef.takePictureAsync();
+      // You can do something with the taken photo, like saving or displaying it.
+      console.log("Photo taken:", photo);
+    }
+  };
+
   return (
     <View style={styles.uploadPhotoNotAdded}>
-      <BarsStatusBarIPhoneD
-        wifi={require("../assets/wifi2.png")}
-        cellularConnection={require("../assets/cellular-connection1.png")}
-        barsStatusBarIPhoneDPosition="absolute"
-        barsStatusBarIPhoneDBackgroundColor="unset"
-        barsStatusBarIPhoneDTop={0}
-        barsStatusBarIPhoneDLeft={0}
-        barsStatusBarIPhoneDWidth={376}
-        timeFontFamily="RobotoSerif-SemiBold"
-      />
       <Text style={styles.signInWithContainer}>
         <Text style={styles.signInWithContainer1}>
           <Text style={styles.upload}>{`Upload
 `}</Text>
-          <Text style={styles.photo}>Photo</Text>
+          <Text style={styles.photo}>Photo 1</Text>
         </Text>
       </Text>
       <View style={styles.group}>
         <View style={styles.rectangle} />
+        <Pressable style={styles.wrapper} onPress={takePicture}>
         <Image
           style={styles.path2Icon}
           contentFit="cover"
           source={require("../assets/path-21.png")}
         />
+        </Pressable>
       </View>
+     
+      {hasPermission === false && (
+        <Text style={styles.permissionText}>Camera permission is not granted</Text>
+      )}
+      {Platform.OS === "web" && (
+        <Text style={styles.webMessage}>Camera is not available on the web</Text>
+      )}
+      <Camera
+        style={styles.camera}
+        type={Camera.Constants.Type.back}
+        ref={(ref) => setCameraRef(ref)}
+      />
       <View style={styles.homeIndicatorLightWrapper}>
         <View style={styles.homeIndicatorLight}>
           <View style={styles.homeIndicatorLight} />
@@ -46,6 +68,7 @@ const UploadPhotoNotAdded = () => {
       <Pressable
         style={styles.wrapper}
         onPress={() => navigation.navigate("UploadPhotoAdded")}
+        // onPress={takePicture}
       >
         <Image
           style={styles.icon}

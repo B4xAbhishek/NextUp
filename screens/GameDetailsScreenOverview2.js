@@ -8,11 +8,13 @@ import { useNavigation } from "@react-navigation/native";
 import SectionFilter from "../components/SectionFilter";
 import StatCollectionSection from "../components/StatCollectionSection";
 import { FontFamily, Color, FontSize, Border } from "../GlobalStyles";
+import { ScrollView } from "react-native-gesture-handler";
 
 const GameDetailsScreenOverview2 = () => {
   const navigation = useNavigation();
 
   return (
+    <ScrollView>
     <View style={styles.gameDetailsScreenOverview}>
       <Text style={styles.loremIpsumDolor}>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cursus
@@ -124,6 +126,7 @@ const GameDetailsScreenOverview2 = () => {
       </View>
       <StatCollectionSection buttonText=" Stat Collection " />
     </View>
+    </ScrollView>
   );
 };
 

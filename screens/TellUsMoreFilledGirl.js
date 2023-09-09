@@ -1,27 +1,41 @@
-import * as React from "react";
-import { StyleSheet, View, Text } from "react-native";
+import React, {useState} from "react";
+import { StyleSheet, View, Text, TextInput } from "react-native";
 import { Image } from "expo-image";
 import { useNavigation } from "@react-navigation/native";
 import BarsStatusBarIPhoneD from "../components/BarsStatusBarIPhoneD";
 import CityForm from "../components/CityForm";
 import ConfirmSection from "../components/ConfirmSection";
 import { Color, FontFamily, FontSize, Border } from "../GlobalStyles";
+import { Picker } from "@react-native-picker/picker";
 
 const TellUsMoreFilledGirl = () => {
   const navigation = useNavigation();
 
+  const [selectedCity, setSelectedCity] = useState("");
+const [selectedState, setSelectedState] = useState("");
+const [selectedHeight, setSelectedHeight] = useState("");
+const [selectedWeight, setSelectedWeight] = useState("");
+
+
+const handleCityChange = (itemValue) => {
+  setSelectedCity(itemValue);
+};
+
+const handleStateChange = (itemValue) => {
+  setSelectedState(itemValue);
+};
+
+const handleHeightChange = (itemValue) => {
+  setSelectedHeight(itemValue);
+};
+
+const handleWeightChange = (itemValue) => {
+  setSelectedWeight(itemValue);
+};
+
+
   return (
     <View style={styles.tellUsMoreFilledGirl}>
-      <BarsStatusBarIPhoneD
-        wifi={require("../assets/wifi2.png")}
-        cellularConnection={require("../assets/cellular-connection1.png")}
-        barsStatusBarIPhoneDPosition="absolute"
-        barsStatusBarIPhoneDBackgroundColor="unset"
-        barsStatusBarIPhoneDTop={0}
-        barsStatusBarIPhoneDLeft={0}
-        barsStatusBarIPhoneDWidth={376}
-        timeFontFamily="RobotoSerif-SemiBold"
-      />
       <View style={styles.group}>
         <View style={styles.rectangle} />
         <Image
@@ -49,8 +63,8 @@ const TellUsMoreFilledGirl = () => {
         />
         <Text style={[styles.firstName, styles.nameTypo]}>FIRST NAME</Text>
         <Text style={[styles.lastName, styles.nameTypo]}>LAST NAME</Text>
-        <Text style={[styles.vineet, styles.vineetTypo]}>Vineet</Text>
-        <Text style={[styles.kumar, styles.vineetTypo]}>Kumar</Text>
+        <TextInput style={[styles.vineet, styles.vineetTypo]}>Vineet</TextInput>
+        <TextInput style={[styles.kumar, styles.vineetTypo]}>Kumar</TextInput>
       </View>
       <View style={[styles.path5Copy2Group, styles.path5Position]}>
         <Image
@@ -81,6 +95,7 @@ const TellUsMoreFilledGirl = () => {
         cityName="50 KG"
         propTop={448}
       />
+
     </View>
   );
 };

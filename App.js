@@ -5,7 +5,6 @@ import { useFonts } from "expo-font";
 import GetStarted from "./screens/GetStarted";
 import Frame from "./screens/Frame";
 import PhotoIDNotAdded from "./screens/PhotoIDNotAdded";
-import Text1 from "./components/Text1";
 import PhotoIDNotAdded1 from "./screens/PhotoIDNotAdded1";
 import PhotoIDNotAdded2 from "./screens/PhotoIDNotAdded2";
 import PhotoIDNotAdded3 from "./screens/PhotoIDNotAdded3";
@@ -42,16 +41,19 @@ import PlayerProfileSomeoneElse from "./screens/PlayerProfileSomeoneElse";
 import PlayerDashboard from "./screens/PlayerDashboard";
 import PlayerDashboard1 from "./screens/PlayerDashboard1";
 import Search from "./screens/Search";
+import EditProfileCreateNewPass from "./screens/EditProfileCreateNewPass";
+import EditProfileVerification from "./screens/EditProfileVerification";
 import CalendarPlayer from "./screens/CalendarPlayer";
+import GameDetailsScreenOverview from "./screens/GameDetailsScreenOverview";
+import GameDetailsScreenOverview1 from "./screens/GameDetailsScreenOverview1";
+import GameDetailsScreenOverview2 from "./screens/GameDetailsScreenOverview2";
 import Search1 from "./screens/Search1";
 import Frame11 from "./screens/Frame1";
 import Frame2 from "./screens/Frame";
 import Logout from "./screens/Logout";
 import GameDetailsScreenLineup from './screens/GameDetailsScreenLineup'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-
 import 'expo-dev-client'
 
 const App = () => {
@@ -83,7 +85,6 @@ const App = () => {
   return (
     <>
       <NavigationContainer>
-
         {hideSplashScreen ? (
           <>
             <Stack.Navigator screenOptions={{ headerShown: false }}>
@@ -100,6 +101,16 @@ const App = () => {
                <Stack.Screen
                 name="GameDetailsScreenLineup"
                 component={GameDetailsScreenLineup}
+                options={{ headerShown: false }}
+              />
+               <Stack.Screen
+                name="EditProfileCreateNewPass"
+                component={EditProfileCreateNewPass}
+                options={{ headerShown: false }}
+              />
+               <Stack.Screen
+                name="EditProfileVerification"
+                component={EditProfileVerification}
                 options={{ headerShown: false }}
               />
               <Stack.Screen
@@ -120,6 +131,21 @@ const App = () => {
               <Stack.Screen
                 name="CalendarPlayer"
                 component={CalendarPlayer}
+                options={{ headerShown: false }}
+              />
+               <Stack.Screen
+                name="GameDetailsScreenOverview"
+                component={GameDetailsScreenOverview}
+                options={{ headerShown: false }}
+              />
+              <Stack.Screen
+                name="GameDetailsScreenOverview1"
+                component={GameDetailsScreenOverview1}
+                options={{ headerShown: false }}
+              />
+              <Stack.Screen
+                name="GameDetailsScreenOverview2"
+                component={GameDetailsScreenOverview2}
                 options={{ headerShown: false }}
               />
               <Stack.Screen

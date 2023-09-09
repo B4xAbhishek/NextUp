@@ -36,7 +36,7 @@ const SelectPlayStyle = () => {
           <View style={styles.homeIndicator} />
         </View>
       </View>
-      <Text style={styles.oneLastStep}>Select Player Style (Boy)</Text>
+      <Text style={styles.oneLastStep}>Select Player Style (Girl)</Text>
       <ConfirmSection
         propTop={705}
         onFramePressablePress={() =>

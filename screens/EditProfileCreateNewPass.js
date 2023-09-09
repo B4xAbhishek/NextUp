@@ -1,8 +1,7 @@
-import * as React from "react";
-import { StyleSheet, View, Text, Pressable } from "react-native";
+import React, { useState } from "react";
+import { StyleSheet, View, Text, Pressable, TextInput } from "react-native";
 import { Image } from "expo-image";
 import { useNavigation } from "@react-navigation/native";
-import BarsStatusBarIPhoneD from "../components/BarsStatusBarIPhoneD";
 import VineetContainer from "../components/VineetContainer";
 import SaveForm from "../components/SaveForm";
 import { Color, FontFamily, FontSize, Border } from "../GlobalStyles";
@@ -10,101 +9,139 @@ import { ScrollView } from "react-native-gesture-handler";
 
 const EditProfileCreateNewPass = () => {
   const navigation = useNavigation();
+  const [dateOfBirth, setDateOfBirth] = useState('');
+  const [phoneNumber, setPhoneNumber] = useState('');
+  const [email, setEmail] = useState('');
+  const [oldPassword, setOldPassword] = useState('');
+  const [newPassword, setNewPassword] = useState('');
+  const [confirmNewPassword, setConfirmNewPassword] = useState('');
 
   return (
     <ScrollView>
-    <View style={styles.editProfileCreateNewPass}>
-      <Pressable
-        style={styles.group}
-        onPress={() => navigation.navigate("EditProfileEnterOldPassw")}
-      >
-        <View style={styles.rectangle} />
+      <View style={styles.editProfileCreateNewPass}>
+        <Pressable
+          style={styles.group}
+          onPress={() => navigation.navigate('EditProfileEnterOldPassw')}
+        >
+          <View style={styles.rectangle} />
+          <Image
+            style={styles.path2Icon}
+            contentFit="cover"
+            source={require('../assets/path-21.png')}
+          />
+        </Pressable>
+        <Text style={styles.oneLastStep}>Enter Coach Details</Text>
         <Image
-          style={styles.path2Icon}
+          style={[styles.editProfileCreateNewPassChild, styles.editLayout]}
           contentFit="cover"
-          source={require("../assets/path-21.png")}
+          source={require('../assets/ellipse-710.png')}
         />
-      </Pressable>
-      <Text style={styles.oneLastStep}>Enter Coach Details</Text>
-      <Image
-        style={[styles.editProfileCreateNewPassChild, styles.editLayout]}
-        contentFit="cover"
-        source={require("../assets/ellipse-710.png")}
-      />
-      <Image
-        style={[styles.editProfileCreateNewPassItem, styles.editLayout]}
-        contentFit="cover"
-        source={require("../assets/ellipse-711.png")}
-      />
-      <Image
-        style={styles.editProfileCreateNewPassInner}
-        contentFit="cover"
-        source={require("../assets/group-1000002714.png")}
-      />
-      <VineetContainer />
-      <Image
-        style={[styles.path5Copy2, styles.path5Layout]}
-        contentFit="cover"
-        source={require("../assets/path-5-copy-22.png")}
-      />
-      <Text style={[styles.firstName, styles.firstTypo]}>DATE OF BIRTH</Text>
-      <Text style={[styles.vineet, styles.vineetTypo1]}>Nov 26 1993</Text>
-      <Image
-        style={[styles.path5Copy21, styles.path5Layout]}
-        contentFit="cover"
-        source={require("../assets/path-5-copy-22.png")}
-      />
-      <Image
-        style={[styles.path5Copy3, styles.path5Layout]}
-        contentFit="cover"
-        source={require("../assets/path-5-copy-22.png")}
-      />
-      <Image
-        style={[styles.path5Copy4, styles.path5Layout]}
-        contentFit="cover"
-        source={require("../assets/path-5-copy-22.png")}
-      />
-      <Image
-        style={[styles.path5Copy5, styles.path5Layout]}
-        contentFit="cover"
-        source={require("../assets/path-5-copy-22.png")}
-      />
-      <Image
-        style={[styles.path5Copy6, styles.path5Layout]}
-        contentFit="cover"
-        source={require("../assets/path-5-copy-22.png")}
-      />
-      <Text style={[styles.firstName1, styles.firstTypo]}>PHONE NUMBER</Text>
-      <Text style={[styles.firstName2, styles.firstTypo]}>EMAIL ID</Text>
-      <Text style={[styles.firstName3, styles.firstTypo]}>
-        ENTER OLD PASSWORD
-      </Text>
-      <Text style={[styles.firstName4, styles.firstTypo]}>NEW PASSWORD</Text>
-      <Text style={styles.firstName5}>CONFIRM NEW PASSWORD</Text>
-      <Text style={[styles.vineet1, styles.vineetTypo1]}>+1 586 566 5899</Text>
-      <Text style={[styles.vineet2, styles.vineetTypo1]}>name@gmail.com</Text>
-      <Text style={[styles.vineet3, styles.vineetTypo]}>************</Text>
-      <Text style={[styles.vineet4, styles.vineetTypo]}>************</Text>
-      <Text style={[styles.vineet5, styles.vineetTypo]}>************</Text>
-      <SaveForm
-        propTop={907}
-        onGroupPressablePress={() =>
-          navigation.navigate("EditProfileVerification")
-        }
-      />
-      <Text style={styles.oldPassword}>CREATE NEW</Text>
-      <View style={styles.rectangleView} />
-      <Text style={styles.bulls}>Account Details</Text>
-      <Text style={[styles.warriors, styles.warriorsTypo]}>Verification</Text>
-      <Text style={[styles.warriors1, styles.warriorsTypo]}>Other Details</Text>
-    </View>
+        <Image
+          style={[styles.editProfileCreateNewPassItem, styles.editLayout]}
+          contentFit="cover"
+          source={require('../assets/ellipse-711.png')}
+        />
+        <Image
+          style={styles.editProfileCreateNewPassInner}
+          contentFit="cover"
+          source={require('../assets/group-1000002714.png')}
+        />
+        <VineetContainer />
+        <Image
+          style={[styles.path5Copy2, styles.path5Layout]}
+          contentFit="cover"
+          source={require('../assets/path-5-copy-22.png')}
+        />
+        <Text style={[styles.firstName, styles.firstTypo]}>DATE OF BIRTH</Text>
+        <TextInput
+          style={[styles.vineet, styles.vineetTypo1]}
+          onChangeText={setDateOfBirth}
+          value={dateOfBirth}
+          placeholder="Nov 26 1993"
+        />
+        <Image
+          style={[styles.path5Copy21, styles.path5Layout]}
+          contentFit="cover"
+          source={require('../assets/path-5-copy-22.png')}
+        />
+        <Image
+          style={[styles.path5Copy3, styles.path5Layout]}
+          contentFit="cover"
+          source={require('../assets/path-5-copy-22.png')}
+        />
+        <Image
+          style={[styles.path5Copy4, styles.path5Layout]}
+          contentFit="cover"
+          source={require('../assets/path-5-copy-22.png')}
+        />
+        <Image
+          style={[styles.path5Copy5, styles.path5Layout]}
+          contentFit="cover"
+          source={require('../assets/path-5-copy-22.png')}
+        />
+        <Image
+          style={[styles.path5Copy6, styles.path5Layout]}
+          contentFit="cover"
+          source={require('../assets/path-5-copy-22.png')}
+        />
+        <Text style={[styles.firstName1, styles.firstTypo]}>PHONE NUMBER</Text>
+        <Text style={[styles.firstName2, styles.firstTypo]}>EMAIL ID</Text>
+        <Text style={[styles.firstName3, styles.firstTypo]}>
+          ENTER OLD PASSWORD
+        </Text>
+        <Text style={[styles.firstName4, styles.firstTypo]}>NEW PASSWORD</Text>
+        <Text style={styles.firstName5}>CONFIRM NEW PASSWORD</Text>
+        <TextInput
+          style={[styles.vineet1, styles.vineetTypo1]}
+          onChangeText={setPhoneNumber}
+          value={phoneNumber}
+          placeholder="+1 586 566 5899"
+        />
+        <TextInput
+          style={[styles.vineet2, styles.vineetTypo1]}
+          onChangeText={setEmail}
+          value={email}
+          placeholder="name@gmail.com"
+        />
+        <TextInput
+          style={[styles.vineet3, styles.vineetTypo]}
+          onChangeText={setOldPassword}
+          value={oldPassword}
+          placeholder="************"
+        />
+        <TextInput
+          style={[styles.vineet4, styles.vineetTypo]}
+          onChangeText={setNewPassword}
+          value={newPassword}
+          placeholder="************"
+        />
+        <TextInput
+          style={[styles.vineet5, styles.vineetTypo]}
+          onChangeText={setConfirmNewPassword}
+          value={confirmNewPassword}
+          placeholder="************"
+        />
+        <SaveForm
+          propTop={907}
+          onGroupPressablePress={() =>
+            navigation.navigate('EditProfileVerification')
+          }
+        />
+        <Text style={styles.oldPassword}>CREATE NEW</Text>
+        <View style={styles.rectangleView} />
+        <Text style={styles.bulls}>Account Details</Text>
+        <Text style={[styles.warriors, styles.warriorsTypo]} 
+         onPress={() => navigation.navigate('EditProfileVerification')}>
+          Verification</Text>
+        <Text style={[styles.warriors1, styles.warriorsTypo]}>Other Details</Text>
+      </View>
     </ScrollView>
   );
 };
 
 const styles = StyleSheet.create({
   editLayout: {
-    height: 93,
+    height: 103,
     width: 93,
     left: 141,
     position: "absolute",
@@ -129,7 +166,7 @@ const styles = StyleSheet.create({
     position: "absolute",
   },
   vineetTypo1: {
-    height: 18,
+    height: 28,
     fontWeight: "600",
     lineHeight: 18,
     width: 148,

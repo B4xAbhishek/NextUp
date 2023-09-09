@@ -7,11 +7,13 @@ import ContainerCardForm from "../components/ContainerCardForm";
 import FormContainer1 from "../components/FormContainer1";
 import DynamicComponent1 from "../components/DynamicComponent1";
 import { Color, Border, FontFamily, FontSize, Padding } from "../GlobalStyles";
+import { ScrollView } from "react-native-gesture-handler";
 
 const GameDetailsScreenOverview1 = () => {
   const navigation = useNavigation();
 
   return (
+    <ScrollView>
     <View style={styles.gameDetailsScreenOverview}>
       <View
         style={[styles.gameDetailsScreenOverviewChild, styles.gameLayout]}
@@ -428,6 +430,7 @@ const GameDetailsScreenOverview1 = () => {
         source={require("../assets/los-angeles-lakers-logo2.png")}
       />
     </View>
+    </ScrollView>
   );
 };
 
